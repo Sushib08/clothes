@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logo,
+.started:active {
+  transform: translateY(1px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+#value,
+#second-value,
+.unite {
+  font-size: 40px;
+  color: #c79c2c;
+  font-weight: 600;
+}
+
+.numbers {
+  display: flex;
+  justify-content: center;
+}
+
+.numbers-contain {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.started {
+  background-color: #c79c2c;
+  height: 50px;
+  width: 150px;
+  font-family: "Audiowide", sans-serif;
+  border: none;
+}

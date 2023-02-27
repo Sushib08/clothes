@@ -37,15 +37,24 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="home.php">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="woman.php">Femmes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Hommes</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="woman.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Femmes
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="./top_woman.php">Hauts</a></li>
+                                        <li><a class="dropdown-item" href="#">Bas</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider" />
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Chaussures</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Vêtements
+                                        Hommes
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Hauts</a></li>
@@ -57,6 +66,9 @@
                                             <a class="dropdown-item" href="#">Chaussures</a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Accessoires</a>
                                 </li>
                             </ul>
                             <div class="d-flex">

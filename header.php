@@ -13,7 +13,7 @@ echo (' <header>
             <a class="nav-link active" aria-current="page" href="home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./pages/woman.php">Femmes</a>
+            <a class="nav-link" href="woman.php">Femmes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Hommes</a>

@@ -38,7 +38,7 @@
                                     <a class="nav-link active" aria-current="page" href="home.php">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./pages/woman.php">Femmes</a>
+                                    <a class="nav-link" href="woman.php">Femmes</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Hommes</a>
@@ -63,7 +63,7 @@
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item btn"> <a class="nav-link" href="account.php"><img src="./img/user.svg" alt="user" />Mon compte</a></li>
                                     <li class="nav-item btn"> <a class="nav-link" href="shop.php"><img src="./img/shop.svg" alt="shop" />Mon panier</a></li>
-                                    <li class="nav-item btn"> <a class="nav-link" href="./logout.php"><img src="./img/logout.svg" alt="logout" />Déconnexion</a></li>
+                                    <li class="nav-item btn"> <a class="nav-link" href="logout.php"><img src="./img/logout.svg" alt="logout" />Déconnexion</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -79,9 +79,9 @@
                     <div class="row py-lg-5">
                         <div class="col-lg-6 col-md-8 mx-auto">
                             <h1 style="font-family: 'Audiowide', sans-serif; margin-bottom:30px" class="fw-light">BEST OUTFIT</h1>
-                            <p style="margin-bottom:30px" class="lead text-muted">Fashion is a form of self-expression and autonomy atv at a particular period of autonomy.</p>
+                            <p style="margin-bottom:30px" class="lead text-muted">La mode est une forme d'expression de soi à une période particulière d'autonomie. Montrer votre style</p>
                             <img src="./img/model.png" class="img-fluid" alt="model">
-                            <p style="margin-top: 30px;" class="text-muted">"Products finely crafted clothing places influenced from popular culture and street fashion and high-end fashionistas a like"</p>
+                            <p style="margin-top: 30px;" class="text-muted">"Des vêtements finement confectionnés, influencés par la culture populaire, la mode de rue et les fashionistas haut de gamme."</p>
                         </div>
 
                         <div class="numbers-contain">
@@ -90,7 +90,7 @@
                                     <p id="value"></p>
                                     <p class="unite">K+</p>
                                 </div>
-                                <p>Happy customers</p>
+                                <p>Clients Satisfaits</p>
                             </div>
 
                             <div class="rigth">

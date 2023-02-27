@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logo,
+.started:active {
+  transform: translateY(1px);
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  background-color: #6c757d;
+}
+
+.card-contain {
+  display: flex;
+}
+
+.link {
+  font-size: 20px;
+  color: #c79c2c;
+  text-decoration: none;
+  font-family: "Audiowide", sans-serif;
+}
+
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+}
+.wrap div {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: 250px;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font: bold 3em sans-serif;
+  line-height: 350px;
+}
+.side-a {
+  background: url("./img/womans/top.webp");
+}
+.side-b {
+  background: url("./img/womans/top.webp");
+  opacity: 0.5;
+}
+
+.side-c {
+  background: url("./img/womans/down.jpg");
+}
+.side-d {
+  background: url("./img/womans/down.jpg");
+  opacity: 0.5;
+}
+
+.side-e {
+  background: url("./img/womans/sneackers.webp");
+}
+.side-f {
+  background: url("./img/womans/sneackers.webp");
+  opacity: 0.5;
+}
+
+.wrap {
+  transition: -webkit-transform 0.5s ease-in;
+  -webkit-transform-style: preserve-3d;
+}
+
+.wrap div {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+
+.side-a,
+.side-c,
+.side-e {
+  z-index: 100;
+}
+.side-b,
+.side-d,
+.side-f {
+  -webkit-transform: rotateY(-180deg);
+}
+
+.wrap:hover {
+  -webkit-transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 800px) {
+  .card-contain {
+    flex-direction: column;
+  }
+}

@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 
 if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 ?>
@@ -90,29 +92,92 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
             include("woman.php")
             ?>
 
-            <section class="products">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <?php foreach ($Produits as $produit) : ?>
+            <section style="margin-top: 30px; margin-bottom: 30px;">
+                <h3 style="text-align: center; color: #c79c2c; font-family: Audiowide, sans-serif;">Nos hauts</h3>
 
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                    <title>Placeholder</title>
-                                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                                </svg>
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                        <small class="text-muted">9 mins</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+                    <?php
+
+                    require_once "db_conn.php";
+
+                    // Nombre de produits par page
+                    $products_per_page = 9;
+
+                    try {
+                        // Obtenir le nombre total de produits
+                        $total_products = $conn->query("SELECT COUNT(*) as count FROM top_womans")->fetch()['count'];
+
+                        // Obtenir le numéro de la page à partir des paramètres GET
+                        $page_number = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+                        // Calculer l'offset pour la requête SQL
+                        $offset = ($page_number - 1) * $products_per_page;
+
+                        // Sélectionnez les produits pour la page actuelle
+                        $stmt = $conn->prepare("SELECT * FROM top_womans LIMIT :offset, :products_per_page");
+                        $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+                        $stmt->bindParam(':products_per_page', $products_per_page, PDO::PARAM_INT);
+                        $stmt->execute();
+
+                        // Vérifiez si des données ont été retournées
+                        if ($stmt->rowCount() > 0) {
+
+                            // Parcourez les données et affichez-les
+                            while ($row = $stmt->fetch()) {
+                                echo "<div class='col'>";
+                                echo "<div class='card shadow-sm'>";
+                                echo "<div style='align-items: center;' class='card-body'>";
+                                echo '<img class="products" src="data:image/png|image/jpg|image/jpeg;base64,' . base64_encode($row['image_data']) . '" style="height:250px; display:block; margin: 0 auto;""/>';
+                                echo "<h4 style='text-align: center; font-family: Audiowide, sans-serif;'>" . $row['title'] . "</h4>";
+                                echo "<p style='color : #c79c2c; text-align: center'>" . $row['description'] . "</p>";
+                                echo "<h6 style='font-weight: bold; text-align: end;' class='text-muted'>" . $row['price'] . "€" . "</h6>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                            }
+
+                            // Afficher les liens de pagination
+                            $total_pages = ceil($total_products / $products_per_page);
+                            echo '<nav style="margin-top:50px" aria-label="Page navigation example">';
+                            echo '<ul class="pagination justify-content-center">';
+
+                            if ($page_number == 1) {
+                                echo '<li class="page-item disabled">';
+                            } else {
+                                echo '<li class="page-item">';
+                            }
+                            echo '<a class="page-link" href="?page=' . ($page_number - 1) . '" tabindex="-1">Previous</a>';
+                            echo '</li>';
+
+                            for ($i = 1; $i <= $total_pages; $i++) {
+                                $active = ($page_number == $i) ? " active" : "";
+                                echo '<li class="page-item' . $active . '"><a href="?page=' . $i . '" class="page-link">' . $i . '</a></li>';
+                            }
+
+                            if ($page_number == $total_pages) {
+                                echo '<li class="page-item disabled">';
+                            } else {
+                                echo '<li class="page-item">';
+                            }
+                            echo '<a class="page-link" href="?page=' . ($page_number + 1) . '">Next</a>';
+                            echo '</li>';
+
+                            echo '</ul>';
+                            echo '</nav>';
+                        } else {
+                            echo "Aucun produit trouvé.";
+                        }
+                    } catch (PDOException $e) {
+                        echo "Erreur: " . $e->getMessage();
+                    }
+
+                    ?>
+                </div>
+            </section>
+
+            <section class="carrousel">
             </section>
 
         </main>

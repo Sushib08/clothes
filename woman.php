@@ -19,7 +19,7 @@ echo ('
     <div class="wrap">
         <div class="side-a"></div>
         <div class="side-b">
-            <a href="" class="link btn">Nos Hauts</a>
+            <a href="./top_woman.php" class="link btn">Nos Hauts</a>
         </div>
     </div>
     <div class="wrap">

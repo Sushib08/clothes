@@ -180,8 +180,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
                 </div>
             </section>
 
-            <section class="carrousel">
-            </section>
+            <?php
+            include("./carousel.php")
+            ?>
 
             <section class="py-5 text-center bg-secondary">
                 <h2 style="font-family: 'Audiowide', sans-serif; text-decoration: underline; text-decoration-color: #c79c2c;">Partner Brands</h2>

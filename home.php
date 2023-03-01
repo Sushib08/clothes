@@ -92,7 +92,7 @@
                         <div class="col-lg-6 col-md-8 mx-auto">
                             <h1 style="font-family: 'Audiowide', sans-serif; margin-bottom:30px" class="fw-light">BEST OUTFIT</h1>
                             <p style="margin-bottom:30px" class="lead text-muted">La mode est une forme d'expression de soi à une période particulière d'autonomie. Montrer votre style</p>
-                            <img src="./img/model.png" class="img-fluid" alt="model">
+                            <img src="./img/model.webp" class="img-fluid" alt="model">
                             <p style="margin-top: 30px;" class="text-muted">"Des vêtements finement confectionnés, influencés par la culture populaire, la mode de rue et les fashionistas haut de gamme."</p>
                         </div>
 
@@ -132,7 +132,12 @@
 
                     </div>
                 </section>
+
             </main>
+
+            <?php
+            include("./carousel.php")
+            ?>
 
 
             <?php

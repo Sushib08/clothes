@@ -103,7 +103,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
                     require_once "db_conn.php";
 
                     // Nombre de produits par page
-                    $products_per_page = 9;
+                    $products_per_page = 6;
 
                     try {
                         // Obtenir le nombre total de produits
@@ -132,7 +132,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
                                 echo '<img class="products" src="data:image/png|image/jpg|image/jpeg;base64,' . base64_encode($row['image_data']) . '" style="height:250px; display:block; margin: 0 auto;""/>';
                                 echo "<h4 style='text-align: center; font-family: Audiowide, sans-serif;'>" . $row['title'] . "</h4>";
                                 echo "<p style='color : #c79c2c; text-align: center'>" . $row['description'] . "</p>";
-                                echo "<h6 style='font-weight: bold; text-align: end;' class='text-muted'>" . $row['price'] . "€" . "</h6>";
+                                echo "<button style='margin-right: 70%' type='button' class='btn btn-sm'>";
+                                echo "<img src='./img/shop.svg' alt='shop' />";
+                                echo "</button>";
+                                echo "<small style='font-weight:bold; font-size: 16px'>" . $row['price'] . "€" . "</small>";
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</div>";
@@ -179,6 +182,22 @@ if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 
             <section class="carrousel">
             </section>
+
+            <section class="py-5 text-center bg-secondary">
+                <h2 style="font-family: 'Audiowide', sans-serif; text-decoration: underline; text-decoration-color: #c79c2c;">Partner Brands</h2>
+                <div style="margin-top: 50px; display:flex; justify-content:space-around">
+                    <img src="./img/brand/nike.png" style="height : 60px" alt="nike" />
+                    <img src="./img/brand/jordan.png" style="height : 60px" alt="jordan" />
+                    <img src="./img/brand/levis.png" style="height : 60px" alt="levis" />
+                    <img src="./img/brand/adidas.png" style="height : 60px" alt="adidas" />
+                    <img src="./img/brand/tommy.png" style="height : 60px" alt="tommy" />
+
+                </div>
+            </section>
+
+            <?php
+            include("./footer.php")
+            ?>
 
         </main>
 
